@@ -17,12 +17,18 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }} 
           password: ${{ secrets.GHCR_TOKEN }}
-      - name: build and push to ghcr
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          tags: ${{ github.repository }}:latest
+      - name: build and push
+        run: |
+          docker build . --tag ghcr.io/paulduchesne/docker-ghcr:latest          
+          
+          
+          
+#       - name: build and push to ghcr
+#         uses: docker/build-push-action@v3
+#         with:
+#           context: .
+#           push: true
+#           tags: ${{ github.repository }}:latest
           
           
         
