@@ -11,12 +11,17 @@ jobs:
     steps:
       - name: print something ${{ github.repository }} and ${{ github.actor }}
         run: echo "hallo"
+        
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
       - name: login to ghcr    
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }} 
           password: ${{ secrets.GHCR_TOKEN }}
+          
       - name: build and push
         run: |
           docker build . --tag ghcr.io/paulduchesne/docker-ghcr:latest          
