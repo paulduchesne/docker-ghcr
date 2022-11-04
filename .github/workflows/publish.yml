@@ -1,4 +1,4 @@
-name: testing-ci2
+name: build and publish docker package
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "main"
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
