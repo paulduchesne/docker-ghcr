@@ -8,6 +8,4 @@ WORKDIR /image
 
 RUN python --version
 
-RUN pip3 install -r requirements.txt
-
 CMD python script.py
