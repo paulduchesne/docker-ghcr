@@ -9,5 +9,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: print something ${{ github.repository }}
+      - name: print something ${{ github.repository }} and ${{ github.actor }}
         run: echo "hallo"
